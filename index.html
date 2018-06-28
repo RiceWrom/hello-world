@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>
+	body {width:300px;height:480px;overflow:hidden;text-align:center;}
+	body > div{text-align:center;}
+</style>
+<script>
+var got = function(){;
+	var t = document.getElementById('t').checked;
+   	var tax = 3;
+    	if(t)tax = 1.5;
+	var b = document.getElementById('bouns').value;
+   	var e = document.getElementById('buy').value;
+   	var g = document.getElementById('sale').value;
+   	var count = document.getElementById('count').value;
+   	var x = e*1.425*b;
+   	var y = g*1.425*b + g*tax;
+   	var out = (g-e)*1000 -(x+y);
+   	document.getElementById('demo').innerHTML = out*count;
+}
+
+</script>
+<body>
+
+<div>
+	<span>折扣</span>
+	<span>
+		<input type='text' id='bouns'></input>
+	</span>
+</div>
+<div>
+	<span>買進</span>
+	<span>
+		<input type='text' id='buy'></input>
+	</span>
+</div>
+<div>
+	<span>賣出</span>
+	<span>
+		<input type='text' id='sale'></input>
+	</span>
+</div>
+<div>
+	<span>張數</span>
+	<span>
+		<input type='text' id='count'></input>
+	</span>
+</div>
+<div>
+	<input type='checkbox' id='t'>當沖</input>
+</div>
+<button onclick='got()'>試算</button>
+<p id="demo"></p>
+
+</body>
+</html> 
